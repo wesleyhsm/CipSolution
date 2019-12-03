@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:0.5.0.RELEASE")
+	}
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management' 
+
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')	
+	compile('org.apache.commons:commons-lang3:3.0')	
+	
+	compile project(':fourward-payment-canonico')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}

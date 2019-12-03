@@ -1,0 +1,2 @@
+include ':integrador-cip-data', ':fourward-payment-canonico', ':ispb-translate-server', ':ispb-translate-client', ':integrador-cip-server', ':integrador-cip-client', ':fourward-logger', ':ispb-translate-data', ':integrador-cip-xml'
+rootProject.name = 'integrador-cip-soluction'
